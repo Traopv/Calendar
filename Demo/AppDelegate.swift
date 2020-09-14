@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
                    self.window?.backgroundColor = UIColor.white
                    
-                   let welcome = CalendarVC.init()
+                   let welcome = CalendarViewController.init()
                    self.window?.rootViewController = welcome
                    self.window?.makeKey()
                    self.window?.isHidden = false

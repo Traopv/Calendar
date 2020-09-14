@@ -44,6 +44,7 @@ class CellCollectionViewCell: UICollectionViewCell {
             myCollection.setCollectionViewLayout(collectionViewFlowLayout, animated : true)
         }
     }
+    
     func loadData(){
         allDaysInMonth = Utils.getAllDateOfMonth(month: month, year: year)
         myCollection.reloadData()
@@ -60,15 +61,18 @@ extension CellCollectionViewCell: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellDate", for: indexPath) as! CellDate
         //var dayAndMonth = allDaysInMonth[indexPath.row].toString(dateFormat: "dd-MM")
-        var date = allDaysInMonth[indexPath.row]
+        let date = allDaysInMonth[indexPath.row] as Date
+        
         let currentDate = Date()
         if (currentDate.day == date.day && currentDate.month == date.month && currentDate.year == date.year){
             cell.viewCell.backgroundColor = .red
         }
-//        else{
-//            cell.viewCell.backgroundColor = .clear
-//        }
+        else{
+            cell.viewCell.backgroundColor = .clear
+        }
+
         cell.lbDay.text = date.toString(dateFormat: "dd")
+        
         if (date.month == month){
             //thang hien tai
             cell.lbDay.textColor = .white
