@@ -65,6 +65,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18A9CF0B250F7B160066DC0A /* CalendarScroll */ = {
+			isa = PBXGroup;
+			children = (
+				9BB779302508BA08006ADA98 /* CalendarViewController.swift */,
+				9BB779312508BA08006ADA98 /* CalendarViewController.xib */,
+				9BF1695C250A307B003D7FDB /* CellCollectionViewCell.swift */,
+				9BF1695D250A307B003D7FDB /* CellCollectionViewCell.xib */,
+				9BF16960250A30CF003D7FDB /* CellDate.swift */,
+				9BF16961250A30CF003D7FDB /* CellDate.xib */,
+			);
+			path = CalendarScroll;
+			sourceTree = "<group>";
+		};
 		9B1246F4250AA4AC002D2EDF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,9 +134,10 @@
 		E945BC3B2507A160001B4D25 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				9BE5AE59250B5BC0003DB41C /* CommonLib */,
 				E945BC3C2507A160001B4D25 /* AppDelegate.swift */,
 				9B1246F7250AAEF3002D2EDF /* Calendar */,
+				18A9CF0B250F7B160066DC0A /* CalendarScroll */,
+				9BE5AE59250B5BC0003DB41C /* CommonLib */,
 				9B1246F4250AA4AC002D2EDF /* Utils */,
 				E945BC402507A160001B4D25 /* ViewController.swift */,
 				E945BC422507A160001B4D25 /* Main.storyboard */,
@@ -131,12 +145,6 @@
 				E945BC452507A162001B4D25 /* Assets.xcassets */,
 				E945BC472507A162001B4D25 /* LaunchScreen.storyboard */,
 				E945BC4A2507A162001B4D25 /* Info.plist */,
-				9BB779302508BA08006ADA98 /* CalendarViewController.swift */,
-				9BB779312508BA08006ADA98 /* CalendarViewController.xib */,
-				9BF1695C250A307B003D7FDB /* CellCollectionViewCell.swift */,
-				9BF1695D250A307B003D7FDB /* CellCollectionViewCell.xib */,
-				9BF16960250A30CF003D7FDB /* CellDate.swift */,
-				9BF16961250A30CF003D7FDB /* CellDate.xib */,
 			);
 			path = Demo;
 			sourceTree = "<group>";

@@ -81,6 +81,15 @@ extension CellCollectionViewCell: UICollectionViewDelegate, UICollectionViewData
             //thang truoc hoac hoac thang sau
             cell.lbDay.textColor = .gray
         }
+        if indexPath.row % 6 == 0{
+            cell.imgCell.isHidden = false
+        }
+        else{
+            cell.imgCell.isHidden = true
+        }
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //gửi lệch show event lên
     }
 }
