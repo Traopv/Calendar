@@ -17,9 +17,12 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var btnMonth: UIButton!
     @IBOutlet weak var lbMonth: UILabel!
     @IBOutlet weak var myCollection: UICollectionView!
+    @IBOutlet weak var lbEvent: UILabel!
+    @IBOutlet weak var lbDayShow: UILabel!
     
     
     var allDaysInMonth: [Date] = []
+    var data : [EventMonth] = [EventMonth]()
     var currentPage: Date {
         let offsetX = myCollection.contentOffset.x
         let index = Int(offsetX/myCollection.bounds.width)
@@ -38,13 +41,17 @@ class CalendarViewController: UIViewController {
     var currentMonth : Int = 0
     var currentDay : Int = 0
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let date = Date()
-        let calendar = Calendar.current
+        var calendar = Calendar.current
         currentMonth = calendar.component(.month, from: date)
         currentYear = calendar.component(.year, from: date)
         currentDay = calendar.component(.day, from: date)
+        lbDayShow.text = ""
+        
+        data = loadJson()!
         myCollection.register(UINib.init(nibName: "CellCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CellCollectionViewCell")
         conFig()
         lbMonth.text = "Tháng \(currentMonth) - \(currentYear)"
@@ -59,6 +66,51 @@ class CalendarViewController: UIViewController {
     }
     
     //MARK: funtion setup
+    func loadJson() -> [EventMonth]? {
+        if let path = Bundle.main.path(forResource: "Event", ofType: "json")
+        {
+             do {
+                     let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                     let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+                     if let result = jsonResult as? NSDictionary  {
+                        if let datas = result.object(forKey: "data") as? NSArray
+                        {
+                            let dateFormatter = DateFormatter()
+                            dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+                            var arrs = [EventMonth]()
+                            
+                            for item in datas {
+                                if let item = item as? NSDictionary{
+                                    if let strDate = item.object(forKey: "date"), let event = item.object(forKey: "activ")
+                                    {
+                                        let date = dateFormatter.date(from: strDate as! String)!
+                                        arrs.append(EventMonth(date: date, activ: event as! String))
+                                    }
+                                }
+                            }
+                            
+                            return arrs
+                        }
+                    }
+                 } catch {
+                      // handle error
+                 }
+        }
+
+        return nil
+    }
+    func findEvent(value searchValue: Date, in array: [EventMonth]) -> String?
+    {
+
+        for item in array
+        {
+            if item.date.day == searchValue.day && item.date.month == searchValue.month && item.date.year == searchValue.year {
+                return item.activ
+            }
+        }
+
+        return nil
+    }
     func conFig(){
         viewButton.layer.cornerRadius = 8
         viewButton.layer.masksToBounds = true
@@ -91,7 +143,6 @@ class CalendarViewController: UIViewController {
     func reloadMonthTitle() {
         lbMonth.text = "Tháng \(currentPage.month) - \(currentPage.year)"
     }
-    
     //MARK: Button function
     
     @IBAction func btnCurrentDay(_ sender: Any) {
@@ -117,6 +168,16 @@ extension CalendarViewController : UICollectionViewDelegate,UICollectionViewData
         cell.year   = date.year
         cell.setUpCollectionViewItems()
         cell.loadData()
+        cell.closureShowEvent = { (dateChoose: Date) in
+            self.lbDayShow.text = String(dateChoose.toString(dateFormat: "dd-MM-yyy"))
+            let event = self.findEvent(value: dateChoose, in: self.data)
+            if event != nil {
+                self.lbEvent.text = event
+            }
+            else{
+                self.lbEvent.text = "Không có sự kiện!"
+            }
+        }
         return cell
     }
     
