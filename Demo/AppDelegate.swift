@@ -7,21 +7,22 @@
 //
 
 import UIKit
-
+//asdfasfasdfasdf
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-                   self.window?.backgroundColor = UIColor.white
-                   
-                   let welcome = CalendarViewController.init()
-                   self.window?.rootViewController = welcome
-                   self.window?.makeKey()
-                   self.window?.isHidden = false
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.backgroundColor = UIColor.white
+
+        let welcome = CalendarViewController.init()
+        let nav = UINavigationController(rootViewController: welcome)
+        window?.rootViewController = nav
+
+        window?.makeKeyAndVisible()
+        
         return true
     }
-
 }
-

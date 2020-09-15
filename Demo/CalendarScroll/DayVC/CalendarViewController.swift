@@ -45,7 +45,7 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let date = Date()
-        var calendar = Calendar.current
+        let calendar = Calendar.current
         currentMonth = calendar.component(.month, from: date)
         currentYear = calendar.component(.year, from: date)
         currentDay = calendar.component(.day, from: date)
@@ -55,6 +55,7 @@ class CalendarViewController: UIViewController {
         myCollection.register(UINib.init(nibName: "CellCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CellCollectionViewCell")
         conFig()
         lbMonth.text = "Tháng \(currentMonth) - \(currentYear)"
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     override func viewWillLayoutSubviews() {
@@ -118,6 +119,8 @@ class CalendarViewController: UIViewController {
         btnDay.layer.masksToBounds = true
         btnMonth.layer.cornerRadius = 8
         btnMonth.layer.masksToBounds = true
+        btnMonth.backgroundColor = #colorLiteral(red: 0.279307127, green: 0.3288925588, blue: 0.3904538155, alpha: 1)
+        btnDay.backgroundColor = #colorLiteral(red: 0.1477420032, green: 0.232701242, blue: 0.3159016967, alpha: 1)
     }
     func setUpCollectionViewItems(){
         if collectionViewFlowLayout == nil{
@@ -148,12 +151,10 @@ class CalendarViewController: UIViewController {
     @IBAction func btnCurrentDay(_ sender: Any) {
     }
     @IBAction func btnChooseDay(_ sender: Any) {
-        btnMonth.backgroundColor = #colorLiteral(red: 0.279307127, green: 0.3288925588, blue: 0.3904538155, alpha: 1)
-        btnDay.backgroundColor = #colorLiteral(red: 0.1477420032, green: 0.232701242, blue: 0.3159016967, alpha: 1)
     }
     @IBAction func btnChooseMonth(_ sender: Any) {
-        btnDay.backgroundColor = #colorLiteral(red: 0.279307127, green: 0.3288925588, blue: 0.3904538155, alpha: 1)
-        btnMonth.backgroundColor = #colorLiteral(red: 0.1477420032, green: 0.232701242, blue: 0.3159016967, alpha: 1)
+        let weekVC = WeekVC.init()
+        self.navigationController?.pushViewController(weekVC, animated: false)
     }
 }
 extension CalendarViewController : UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate{
