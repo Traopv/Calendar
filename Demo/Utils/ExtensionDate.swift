@@ -45,6 +45,23 @@ extension Date {
         let endDate = Calendar.current.date(byAdding: .month, value: numberOfMonths, to: self)
         return endDate ?? Date()
     }
+    func addWeeks(numberOfWeeks: Int) -> Date {
+        let endDate = Calendar.current.date(byAdding: .weekOfMonth, value: numberOfWeeks, to: self)
+        return endDate ?? Date()
+    }
+//    func addWeek(numberOfWeeks: Int) -> Date {
+//        let date = Date()
+//        var calendar = Calendar.current
+//        let firstWeek = calendar.startOfWeek(date).toString(dateFormat: "dd")
+//        let lastMonth = date.endOfMonth().toString(dateFormat: "dd")
+//        
+//        for i in Int(firstWeek)! ... 7*numberOfWeeks{
+//            while i >= 1 || i <= Int(lastMonth)! {
+//                <#code#>
+//            }
+//        }
+//        return endDate ?? Date()
+//    }
     
     // lấy ra tháng các tháng trước theo số tháng truyền vào của tháng hiện tại
     func getPreviousMonths(numberOfMonths: Int) -> Date {

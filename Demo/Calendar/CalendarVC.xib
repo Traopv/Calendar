@@ -262,7 +262,7 @@
                 <constraint firstItem="bXO-gk-XSD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yod-97-ZOs"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="-82" y="91"/>
+            <point key="canvasLocation" x="127" y="38"/>
         </view>
     </objects>
     <resources>

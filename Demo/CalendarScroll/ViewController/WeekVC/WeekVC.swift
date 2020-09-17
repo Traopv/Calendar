@@ -13,6 +13,8 @@ class WeekVC: UIViewController {
     @IBOutlet weak var viewButton: UIView!
     @IBOutlet weak var btnDay: UIButton!
     @IBOutlet weak var btnWeek: UIButton!
+    @IBOutlet weak var btnMonth: UIButton!
+    @IBOutlet weak var btnYear: UIButton!
     @IBOutlet weak var myCollection: UICollectionView!
     
     var allDaysInMonth: [Date] = []
@@ -20,15 +22,16 @@ class WeekVC: UIViewController {
     var currentPage: Date {
         let offsetX = myCollection.contentOffset.x
         let index = Int(offsetX/myCollection.bounds.width)
-        return listMonth[index]
+        return listWeek[index]
     }
     
-    var listMonth: [Date] = [Date().addMonths(numberOfMonths: 3),
+    var listWeek: [Date] = [Date().addWeeks(numberOfWeeks: 3),
                              Date(),
-                             Date().addMonths(numberOfMonths: 1),
-                             Date().addMonths(numberOfMonths: 2),
-                             Date().addMonths(numberOfMonths: 3),
+                             Date().addWeeks(numberOfWeeks: 1),
+                             Date().addWeeks(numberOfWeeks: 2),
+                             Date().addWeeks(numberOfWeeks: 3),
                              Date()]
+                            
     
     var currentIndex: Int = 1
     var currentYear : Int = 0
@@ -43,6 +46,7 @@ class WeekVC: UIViewController {
         currentYear = calendar.component(.year, from: date)
         currentDay = calendar.component(.day, from: date)
         
+        
         conFig()
     }
     //MARK: Set Up
@@ -54,30 +58,50 @@ class WeekVC: UIViewController {
         btnDay.layer.cornerRadius = 8
         btnDay.layer.masksToBounds = true
         btnDay.backgroundColor = #colorLiteral(red: 0.2765077651, green: 0.3295275569, blue: 0.3910240531, alpha: 1)
+        btnMonth.layer.cornerRadius = 8
+        btnMonth.layer.masksToBounds = true
+        btnMonth.backgroundColor = #colorLiteral(red: 0.2765077651, green: 0.3295275569, blue: 0.3910240531, alpha: 1)
+        btnYear.layer.cornerRadius = 8
+        btnYear.layer.masksToBounds = true
+        btnYear.backgroundColor = #colorLiteral(red: 0.2765077651, green: 0.3295275569, blue: 0.3910240531, alpha: 1)
         btnWeek.layer.cornerRadius = 8
         btnWeek.layer.masksToBounds = true
         btnWeek.backgroundColor = #colorLiteral(red: 0.1486144364, green: 0.2291531265, blue: 0.3167444468, alpha: 1)
     }
     //MARK: Button Function
     @IBAction func chooseDay(_ sender: Any) {
-        self.navigationController?.popViewController(animated: false)
+        let dayVC = CalendarViewController.init()
+        self.navigationController?.pushViewController(dayVC, animated: false)
     }
     @IBAction func chooseWeek(_ sender: Any) {
         
+    }
+    @IBAction func btnChooseMonth(_ sender: Any) {
+        let monthVC = MonthVC.init()
+        self.navigationController?.pushViewController(monthVC, animated: false)
+    }
+    @IBAction func btnChooseYear(_ sender: Any) {
     }
 }
 
 extension WeekVC: UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listMonth.count
+//        return listMonth.count
+        return listWeek.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellWeek", for: indexPath) as! CellWeek
+        let date    = listWeek[indexPath.row]
+        cell.currentMonth = date.month
+        cell.currentYear = date.year
+        cell.currentDay = date.day
+        cell.loadData(currentDate: date)
+        
         return cell
     }
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        print("scrollViewDidEndScrollingAnimation")
+        
     }
     
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
@@ -88,7 +112,7 @@ extension WeekVC: UICollectionViewDelegate,UICollectionViewDataSource,UIScrollVi
         let offsetX = myCollection.contentOffset.x
         
         if offsetX < scrollView.bounds.width {
-            currentIndex = listMonth.count - 2
+            currentIndex = listWeek.count - 2
             print("prev index: \(currentIndex)")
             
             if offsetX == 0 {
@@ -98,64 +122,56 @@ extension WeekVC: UICollectionViewDelegate,UICollectionViewDataSource,UIScrollVi
             weak var weakSelf = self
             DispatchQueue.main.async {
                 if let strongSelf = weakSelf {
-                    //strongSelf.generatePrevDateData()
                     
                     strongSelf.myCollection.scrollToItem(at: IndexPath(row: strongSelf.currentIndex, section: 0), at: .left, animated: false)
-                    //strongSelf.reloadMonthTitle()
                 }
             }
         } else {
             var index: Int = Int(offsetX/scrollView.bounds.width)
-            index = index >= listMonth.count ? listMonth.count - 1 : index
+            index = index >= listWeek.count ? listWeek.count - 1 : index
             print("next index: \(index)")
             
             weak var weakSelf = self
-            if index == listMonth.count - 1 {
+            if index == listWeek.count - 1 {
                 DispatchQueue.main.async {
                     if let strongSelf = weakSelf {
                         strongSelf.generateNextDateData()
                         strongSelf.currentIndex = 1
                         strongSelf.myCollection.scrollToItem(at: IndexPath(row: strongSelf.currentIndex, section: 0), at: .left, animated: false)
-                        //strongSelf.reloadMonthTitle()
                     }
                 }
             }
             else  {
                 currentIndex = index
-                //reloadMonthTitle()
             }
         }
     }
     
     func generatePrevDateData() {
-        let date = listMonth[1]
+        let date = listWeek[1]
         
-        print("generatePrevDateData month: \(date.month) - \(date.year)")
-        
-        let list: [Date] = [date.addMonths(numberOfMonths: -1),
-                            date.addMonths(numberOfMonths: -4),
-                            date.addMonths(numberOfMonths: -3),
-                            date.addMonths(numberOfMonths: -2),
-                            date.addMonths(numberOfMonths: -1),
+        let list: [Date] = [date.addWeeks(numberOfWeeks: -1),
+                            date.addWeeks(numberOfWeeks: -4),
+                            date.addWeeks(numberOfWeeks: -3),
+                            date.addWeeks(numberOfWeeks: -2),
+                            date.addWeeks(numberOfWeeks: -1),
                             date]
 
-        listMonth = list
+        listWeek = list
         myCollection.reloadData()
     }
     
     func generateNextDateData() {
-        let date = listMonth[4]
+        let date = listWeek[4]
         
-        print("generateNextDateData month: \(date.month) - \(date.year)")
-        
-        let list: [Date] = [date.addMonths(numberOfMonths: -1),
-                            date.addMonths(numberOfMonths: 1),
-                            date.addMonths(numberOfMonths: 2),
-                            date.addMonths(numberOfMonths: 3),
-                            date.addMonths(numberOfMonths: 4),
+        let list: [Date] = [date.addWeeks(numberOfWeeks: -1),
+                            date.addWeeks(numberOfWeeks: 1),
+                            date.addWeeks(numberOfWeeks: 2),
+                            date.addWeeks(numberOfWeeks: 3),
+                            date.addWeeks(numberOfWeeks: 4),
                             date]
 
-        listMonth = list
+        listWeek = list
         myCollection.reloadData()
         
     }

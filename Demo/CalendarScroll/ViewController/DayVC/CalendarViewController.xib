@@ -12,6 +12,8 @@
             <connections>
                 <outlet property="btnDay" destination="qac-Pb-NKV" id="6Rb-cl-ny5"/>
                 <outlet property="btnMonth" destination="bn7-HQ-hoE" id="aOe-5L-x8N"/>
+                <outlet property="btnWeek" destination="7Ec-AH-HeW" id="4WE-up-LSN"/>
+                <outlet property="btnYear" destination="At3-p6-hOj" id="SQC-iX-6zG"/>
                 <outlet property="lbDayShow" destination="Aid-0P-pmL" id="46A-Kd-i2a"/>
                 <outlet property="lbEvent" destination="hRD-iU-C41" id="tH3-CX-bzt"/>
                 <outlet property="lbMonth" destination="qNP-Jz-zLb" id="Xak-E1-y77"/>
@@ -31,25 +33,10 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oMl-1N-qTF">
                             <rect key="frame" x="362.5" y="25" width="299" height="50"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qac-Pb-NKV">
-                                    <rect key="frame" x="2" y="2" width="148" height="46"/>
-                                    <color key="backgroundColor" red="0.1477420032" green="0.232701242" blue="0.31590169670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="148" id="Hja-ZV-yuQ"/>
-                                        <constraint firstAttribute="height" constant="46" id="eXS-u9-PdQ"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <state key="normal" title="Ngày">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="btnChooseDay:" destination="-1" eventType="touchUpInside" id="v6e-1s-uoK"/>
-                                    </connections>
-                                </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bn7-HQ-hoE">
-                                    <rect key="frame" x="150" y="2" width="147" height="46"/>
+                                    <rect key="frame" x="149" y="2" width="74" height="46"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="147" id="GAR-RI-cWx"/>
+                                        <constraint firstAttribute="width" constant="74" id="GAR-RI-cWx"/>
                                         <constraint firstAttribute="height" constant="46" id="JbV-ph-BLw"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -60,15 +47,62 @@
                                         <action selector="btnChooseMonth:" destination="-1" eventType="touchUpInside" id="qBT-RP-M4k"/>
                                     </connections>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="At3-p6-hOj">
+                                    <rect key="frame" x="225" y="2" width="74" height="46"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="46" id="fYY-vZ-PjA"/>
+                                        <constraint firstAttribute="width" constant="74" id="sll-U3-T2L"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <state key="normal" title="Năm">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnChooseYear:" destination="-1" eventType="touchUpInside" id="MbN-SM-3xo"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ec-AH-HeW">
+                                    <rect key="frame" x="74" y="2" width="74" height="46"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="74" id="fBu-Yi-Vbr"/>
+                                        <constraint firstAttribute="height" constant="46" id="ppU-Se-xku"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <state key="normal" title="Tuần">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnChooseWeek:" destination="-1" eventType="touchUpInside" id="ybn-a0-mRV"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qac-Pb-NKV">
+                                    <rect key="frame" x="0.0" y="2" width="74" height="46"/>
+                                    <color key="backgroundColor" red="0.1477420032" green="0.232701242" blue="0.31590169670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="74" id="Hja-ZV-yuQ"/>
+                                        <constraint firstAttribute="height" constant="46" id="eXS-u9-PdQ"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <state key="normal" title="Ngày">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnChooseDay:" destination="-1" eventType="touchUpInside" id="v6e-1s-uoK"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" red="0.27930712699999999" green="0.32889255880000001" blue="0.39045381550000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="qac-Pb-NKV" secondAttribute="bottom" constant="2" id="8Jg-Hy-jsw"/>
                                 <constraint firstAttribute="height" constant="50" id="FSW-u5-cTN"/>
+                                <constraint firstAttribute="bottom" secondItem="At3-p6-hOj" secondAttribute="bottom" constant="2" id="G6F-er-Hay"/>
                                 <constraint firstAttribute="width" constant="299" id="J76-L6-5xm"/>
-                                <constraint firstItem="qac-Pb-NKV" firstAttribute="leading" secondItem="oMl-1N-qTF" secondAttribute="leading" constant="2" id="Onp-nu-EiD"/>
-                                <constraint firstItem="qac-Pb-NKV" firstAttribute="top" secondItem="oMl-1N-qTF" secondAttribute="top" constant="2" id="QyL-2e-wLI"/>
-                                <constraint firstAttribute="trailing" secondItem="bn7-HQ-hoE" secondAttribute="trailing" constant="2" id="key-HY-4J3"/>
+                                <constraint firstItem="7Ec-AH-HeW" firstAttribute="leading" secondItem="qac-Pb-NKV" secondAttribute="trailing" id="Q39-P9-HzB"/>
+                                <constraint firstItem="At3-p6-hOj" firstAttribute="top" secondItem="oMl-1N-qTF" secondAttribute="top" constant="2" id="VXb-Ta-Ysb"/>
+                                <constraint firstItem="bn7-HQ-hoE" firstAttribute="leading" secondItem="7Ec-AH-HeW" secondAttribute="trailing" constant="1" id="YlZ-yB-x0q"/>
+                                <constraint firstItem="7Ec-AH-HeW" firstAttribute="baseline" secondItem="bn7-HQ-hoE" secondAttribute="baseline" id="iRg-xB-J0X"/>
+                                <constraint firstAttribute="trailing" secondItem="At3-p6-hOj" secondAttribute="trailing" id="kJU-Ny-uFj"/>
+                                <constraint firstAttribute="trailing" secondItem="bn7-HQ-hoE" secondAttribute="trailing" constant="76" id="key-HY-4J3"/>
+                                <constraint firstItem="qac-Pb-NKV" firstAttribute="baseline" secondItem="7Ec-AH-HeW" secondAttribute="baseline" id="qXs-j4-ZUv"/>
                                 <constraint firstItem="bn7-HQ-hoE" firstAttribute="top" secondItem="oMl-1N-qTF" secondAttribute="top" constant="2" id="v4e-dt-mVK"/>
                                 <constraint firstAttribute="bottom" secondItem="bn7-HQ-hoE" secondAttribute="bottom" constant="2" id="yfT-YY-vNH"/>
                             </constraints>
@@ -79,7 +113,7 @@
                                 <constraint firstAttribute="height" constant="45" id="2RJ-VT-sZ1"/>
                                 <constraint firstAttribute="width" constant="45" id="ALN-a9-USI"/>
                             </constraints>
-                            <state key="normal" image="add"/>
+                            <state key="normal" image="imgpsh_fullsize_anim"/>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lịch họp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Be5-Kj-Kj1">
                             <rect key="frame" x="28" y="32" width="119" height="36"/>
@@ -262,10 +296,10 @@
                 <constraint firstItem="Qsb-RQ-FUR" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="xOb-Up-3zs"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="115" y="138"/>
+            <point key="canvasLocation" x="46" y="-219"/>
         </view>
     </objects>
     <resources>
-        <image name="add" width="512" height="512"/>
+        <image name="imgpsh_fullsize_anim" width="50" height="50"/>
     </resources>
 </document>

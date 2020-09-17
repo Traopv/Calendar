@@ -19,6 +19,8 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var myCollection: UICollectionView!
     @IBOutlet weak var lbEvent: UILabel!
     @IBOutlet weak var lbDayShow: UILabel!
+    @IBOutlet weak var btnWeek: UIButton!
+    @IBOutlet weak var btnYear: UIButton!
     
     
     var allDaysInMonth: [Date] = []
@@ -49,9 +51,15 @@ class CalendarViewController: UIViewController {
         currentMonth = calendar.component(.month, from: date)
         currentYear = calendar.component(.year, from: date)
         currentDay = calendar.component(.day, from: date)
+        let dayyy = Utils.dateFrom(year: 2020, month: 09, day: 16)
+        let week = date.addWeeks(numberOfWeeks: 1)
+        print("==> date",date)
+        print("listWeek",week)
+        print("==> listDate",listMonth[1])
+        print("==> listDate",listMonth[0])
         lbDayShow.text = ""
         
-        data = loadJson()!
+        data = GetData.loadJson()!
         myCollection.register(UINib.init(nibName: "CellCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CellCollectionViewCell")
         conFig()
         lbMonth.text = "Tháng \(currentMonth) - \(currentYear)"
@@ -67,59 +75,21 @@ class CalendarViewController: UIViewController {
     }
     
     //MARK: funtion setup
-    func loadJson() -> [EventMonth]? {
-        if let path = Bundle.main.path(forResource: "Event", ofType: "json")
-        {
-             do {
-                     let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                     let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-                     if let result = jsonResult as? NSDictionary  {
-                        if let datas = result.object(forKey: "data") as? NSArray
-                        {
-                            let dateFormatter = DateFormatter()
-                            dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
-                            var arrs = [EventMonth]()
-                            
-                            for item in datas {
-                                if let item = item as? NSDictionary{
-                                    if let strDate = item.object(forKey: "date"), let event = item.object(forKey: "activ")
-                                    {
-                                        let date = dateFormatter.date(from: strDate as! String)!
-                                        arrs.append(EventMonth(date: date, activ: event as! String))
-                                    }
-                                }
-                            }
-                            
-                            return arrs
-                        }
-                    }
-                 } catch {
-                      // handle error
-                 }
-        }
-
-        return nil
-    }
-    func findEvent(value searchValue: Date, in array: [EventMonth]) -> String?
-    {
-
-        for item in array
-        {
-            if item.date.day == searchValue.day && item.date.month == searchValue.month && item.date.year == searchValue.year {
-                return item.activ
-            }
-        }
-
-        return nil
-    }
+    
     func conFig(){
         viewButton.layer.cornerRadius = 8
         viewButton.layer.masksToBounds = true
         btnDay.layer.cornerRadius = 8
         btnDay.layer.masksToBounds = true
         btnMonth.layer.cornerRadius = 8
+        btnWeek.layer.masksToBounds = true
+        btnWeek.layer.cornerRadius = 8
+        btnYear.layer.masksToBounds = true
+        btnYear.layer.cornerRadius = 8
         btnMonth.layer.masksToBounds = true
         btnMonth.backgroundColor = #colorLiteral(red: 0.279307127, green: 0.3288925588, blue: 0.3904538155, alpha: 1)
+        btnWeek.backgroundColor = #colorLiteral(red: 0.279307127, green: 0.3288925588, blue: 0.3904538155, alpha: 1)
+        btnYear.backgroundColor = #colorLiteral(red: 0.279307127, green: 0.3288925588, blue: 0.3904538155, alpha: 1)
         btnDay.backgroundColor = #colorLiteral(red: 0.1477420032, green: 0.232701242, blue: 0.3159016967, alpha: 1)
     }
     func setUpCollectionViewItems(){
@@ -152,9 +122,18 @@ class CalendarViewController: UIViewController {
     }
     @IBAction func btnChooseDay(_ sender: Any) {
     }
-    @IBAction func btnChooseMonth(_ sender: Any) {
+    @IBAction func btnChooseWeek(_ sender: Any) {
         let weekVC = WeekVC.init()
         self.navigationController?.pushViewController(weekVC, animated: false)
+    }
+    @IBAction func btnChooseYear(_ sender: Any) {
+        let yearVC = YearVC.init()
+        self.navigationController?.pushViewController(yearVC, animated: false)
+    }
+    
+    @IBAction func btnChooseMonth(_ sender: Any) {
+        let monthVC = MonthVC.init()
+        self.navigationController?.pushViewController(monthVC, animated: false)
     }
 }
 extension CalendarViewController : UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate{
@@ -171,7 +150,7 @@ extension CalendarViewController : UICollectionViewDelegate,UICollectionViewData
         cell.loadData()
         cell.closureShowEvent = { (dateChoose: Date) in
             self.lbDayShow.text = String(dateChoose.toString(dateFormat: "dd-MM-yyy"))
-            let event = self.findEvent(value: dateChoose, in: self.data)
+            let event = GetData.findEvent(value: dateChoose, in: self.data)
             if event != nil {
                 self.lbEvent.text = event
             }

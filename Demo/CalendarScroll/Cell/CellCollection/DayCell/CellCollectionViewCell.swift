@@ -153,7 +153,6 @@ extension CellCollectionViewCell: UICollectionViewDelegate, UICollectionViewData
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let date = allDaysInMonth[indexPath.row] as Date
-        //gửi lệch show event lên
         closureShowEvent?(date)
     }
 }

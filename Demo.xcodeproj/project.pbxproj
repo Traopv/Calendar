@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1842EF4625120FA60083C49D /* YearVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842EF4425120FA60083C49D /* YearVC.swift */; };
+		1842EF4725120FA60083C49D /* YearVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1842EF4525120FA60083C49D /* YearVC.xib */; };
+		1842EF4B2512116D0083C49D /* CellYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842EF492512116D0083C49D /* CellYear.swift */; };
+		1842EF4C2512116D0083C49D /* CellYear.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1842EF4A2512116D0083C49D /* CellYear.xib */; };
+		1842EF4F251216EB0083C49D /* CellMonthYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842EF4D251216EB0083C49D /* CellMonthYear.swift */; };
+		1842EF50251216EB0083C49D /* CellMonthYear.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1842EF4E251216EB0083C49D /* CellMonthYear.xib */; };
 		18A9CF08250F772F0066DC0A /* ExtensionDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A9CF07250F772F0066DC0A /* ExtensionDate.swift */; };
 		18A9CF0A250F77570066DC0A /* ExtensionCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A9CF09250F77570066DC0A /* ExtensionCalendar.swift */; };
 		18F461792510A9CF0090838E /* WeekVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F461772510A9CF0090838E /* WeekVC.swift */; };
 		18F4617A2510A9CF0090838E /* WeekVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F461782510A9CF0090838E /* WeekVC.xib */; };
 		18F4617F2510AB3D0090838E /* CellWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4617D2510AB3D0090838E /* CellWeek.swift */; };
 		18F461802510AB3D0090838E /* CellWeek.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F4617E2510AB3D0090838E /* CellWeek.xib */; };
-		18F461842510AF3E0090838E /* CellTableWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F461822510AF3E0090838E /* CellTableWeek.swift */; };
-		18F461852510AF3E0090838E /* CellTableWeek.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F461832510AF3E0090838E /* CellTableWeek.xib */; };
 		18F461882510B0C70090838E /* CellWeekDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F461862510B0C70090838E /* CellWeekDay.swift */; };
 		18F461892510B0C70090838E /* CellWeekDay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F461872510B0C70090838E /* CellWeekDay.xib */; };
 		18F4618C2510B5F40090838E /* CellWeekHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4618A2510B5F40090838E /* CellWeekHours.swift */; };
@@ -25,6 +29,13 @@
 		9B1246FF250AB0FC002D2EDF /* CalendarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B1246FD250AB0FC002D2EDF /* CalendarVC.xib */; };
 		9BB779322508BA08006ADA98 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB779302508BA08006ADA98 /* CalendarViewController.swift */; };
 		9BB779332508BA08006ADA98 /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BB779312508BA08006ADA98 /* CalendarViewController.xib */; };
+		9BB885632510FC3D00BD720A /* DayInWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB885622510FC3D00BD720A /* DayInWeek.swift */; };
+		9BB885652510FC4800BD720A /* DayInWeek.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BB885642510FC4800BD720A /* DayInWeek.xib */; };
+		9BB88567251128AE00BD720A /* GetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB88566251128AE00BD720A /* GetData.swift */; };
+		9BB8856C25112E6E00BD720A /* MonthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB8856A25112E6E00BD720A /* MonthVC.swift */; };
+		9BB8856D25112E6E00BD720A /* MonthVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BB8856B25112E6E00BD720A /* MonthVC.xib */; };
+		9BB8857125112F1D00BD720A /* CellMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB8856F25112F1D00BD720A /* CellMonth.swift */; };
+		9BB8857225112F1D00BD720A /* CellMonth.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BB8857025112F1D00BD720A /* CellMonth.xib */; };
 		9BE5AE57250B15DE003DB41C /* CellCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE5AE55250B15DE003DB41C /* CellCalendar.swift */; };
 		9BE5AE58250B15DE003DB41C /* CellCalendar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5AE56250B15DE003DB41C /* CellCalendar.xib */; };
 		9BE5AE5C250B5BE6003DB41C /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE5AE5B250B5BE6003DB41C /* DateExtensions.swift */; };
@@ -41,14 +52,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1842EF4425120FA60083C49D /* YearVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearVC.swift; sourceTree = "<group>"; };
+		1842EF4525120FA60083C49D /* YearVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YearVC.xib; sourceTree = "<group>"; };
+		1842EF492512116D0083C49D /* CellYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellYear.swift; sourceTree = "<group>"; };
+		1842EF4A2512116D0083C49D /* CellYear.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellYear.xib; sourceTree = "<group>"; };
+		1842EF4D251216EB0083C49D /* CellMonthYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellMonthYear.swift; sourceTree = "<group>"; };
+		1842EF4E251216EB0083C49D /* CellMonthYear.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellMonthYear.xib; sourceTree = "<group>"; };
 		18A9CF07250F772F0066DC0A /* ExtensionDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDate.swift; sourceTree = "<group>"; };
 		18A9CF09250F77570066DC0A /* ExtensionCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCalendar.swift; sourceTree = "<group>"; };
 		18F461772510A9CF0090838E /* WeekVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekVC.swift; sourceTree = "<group>"; };
 		18F461782510A9CF0090838E /* WeekVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeekVC.xib; sourceTree = "<group>"; };
 		18F4617D2510AB3D0090838E /* CellWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellWeek.swift; sourceTree = "<group>"; };
 		18F4617E2510AB3D0090838E /* CellWeek.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellWeek.xib; sourceTree = "<group>"; };
-		18F461822510AF3E0090838E /* CellTableWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTableWeek.swift; sourceTree = "<group>"; };
-		18F461832510AF3E0090838E /* CellTableWeek.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellTableWeek.xib; sourceTree = "<group>"; };
 		18F461862510B0C70090838E /* CellWeekDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellWeekDay.swift; sourceTree = "<group>"; };
 		18F461872510B0C70090838E /* CellWeekDay.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellWeekDay.xib; sourceTree = "<group>"; };
 		18F4618A2510B5F40090838E /* CellWeekHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellWeekHours.swift; sourceTree = "<group>"; };
@@ -59,6 +74,13 @@
 		9B1246FD250AB0FC002D2EDF /* CalendarVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarVC.xib; sourceTree = "<group>"; };
 		9BB779302508BA08006ADA98 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		9BB779312508BA08006ADA98 /* CalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
+		9BB885622510FC3D00BD720A /* DayInWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInWeek.swift; sourceTree = "<group>"; };
+		9BB885642510FC4800BD720A /* DayInWeek.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayInWeek.xib; sourceTree = "<group>"; };
+		9BB88566251128AE00BD720A /* GetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetData.swift; sourceTree = "<group>"; };
+		9BB8856A25112E6E00BD720A /* MonthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthVC.swift; sourceTree = "<group>"; };
+		9BB8856B25112E6E00BD720A /* MonthVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthVC.xib; sourceTree = "<group>"; };
+		9BB8856F25112F1D00BD720A /* CellMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellMonth.swift; sourceTree = "<group>"; };
+		9BB8857025112F1D00BD720A /* CellMonth.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellMonth.xib; sourceTree = "<group>"; };
 		9BE5AE55250B15DE003DB41C /* CellCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCalendar.swift; sourceTree = "<group>"; };
 		9BE5AE56250B15DE003DB41C /* CellCalendar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellCalendar.xib; sourceTree = "<group>"; };
 		9BE5AE5B250B5BE6003DB41C /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
@@ -87,12 +109,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1842EF4325120B650083C49D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				18F461722510A9540090838E /* DayVC */,
+				18F461762510A9A50090838E /* WeekVC */,
+				9BB8856825112E4A00BD720A /* MonthVC */,
+				9BB8856925112E5600BD720A /* YearVC */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		1842EF48251211550083C49D /* CellYear */ = {
+			isa = PBXGroup;
+			children = (
+				1842EF492512116D0083C49D /* CellYear.swift */,
+				1842EF4A2512116D0083C49D /* CellYear.xib */,
+				1842EF4D251216EB0083C49D /* CellMonthYear.swift */,
+				1842EF4E251216EB0083C49D /* CellMonthYear.xib */,
+			);
+			path = CellYear;
+			sourceTree = "<group>";
+		};
 		18A9CF0B250F7B160066DC0A /* CalendarScroll */ = {
 			isa = PBXGroup;
 			children = (
+				1842EF4325120B650083C49D /* ViewController */,
+				9BB885602510FBEF00BD720A /* View */,
 				18F461752510A9830090838E /* Cell */,
-				18F461762510A9A50090838E /* WeekVC */,
-				18F461722510A9540090838E /* DayVC */,
 			);
 			path = CalendarScroll;
 			sourceTree = "<group>";
@@ -109,6 +153,8 @@
 		18F461732510A96A0090838E /* CellCollection */ = {
 			isa = PBXGroup;
 			children = (
+				1842EF48251211550083C49D /* CellYear */,
+				9BB8856E25112EC700BD720A /* MonthCell */,
 				18F4617C2510AB220090838E /* WeekCell */,
 				18F461742510A9750090838E /* DayCell */,
 			);
@@ -166,8 +212,6 @@
 		18F461812510AF190090838E /* CellWeek */ = {
 			isa = PBXGroup;
 			children = (
-				18F461822510AF3E0090838E /* CellTableWeek.swift */,
-				18F461832510AF3E0090838E /* CellTableWeek.xib */,
 				18F4618A2510B5F40090838E /* CellWeekHours.swift */,
 				18F4618B2510B5F40090838E /* CellWeekHours.xib */,
 			);
@@ -180,6 +224,7 @@
 				9B1246F5250AA4BC002D2EDF /* Utils.swift */,
 				18A9CF07250F772F0066DC0A /* ExtensionDate.swift */,
 				18A9CF09250F77570066DC0A /* ExtensionCalendar.swift */,
+				9BB88566251128AE00BD720A /* GetData.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -193,6 +238,50 @@
 				9BE5AE56250B15DE003DB41C /* CellCalendar.xib */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		9BB885602510FBEF00BD720A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9BB885612510FBF600BD720A /* ViewWeek */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9BB885612510FBF600BD720A /* ViewWeek */ = {
+			isa = PBXGroup;
+			children = (
+				9BB885622510FC3D00BD720A /* DayInWeek.swift */,
+				9BB885642510FC4800BD720A /* DayInWeek.xib */,
+			);
+			path = ViewWeek;
+			sourceTree = "<group>";
+		};
+		9BB8856825112E4A00BD720A /* MonthVC */ = {
+			isa = PBXGroup;
+			children = (
+				9BB8856A25112E6E00BD720A /* MonthVC.swift */,
+				9BB8856B25112E6E00BD720A /* MonthVC.xib */,
+			);
+			path = MonthVC;
+			sourceTree = "<group>";
+		};
+		9BB8856925112E5600BD720A /* YearVC */ = {
+			isa = PBXGroup;
+			children = (
+				1842EF4425120FA60083C49D /* YearVC.swift */,
+				1842EF4525120FA60083C49D /* YearVC.xib */,
+			);
+			path = YearVC;
+			sourceTree = "<group>";
+		};
+		9BB8856E25112EC700BD720A /* MonthCell */ = {
+			isa = PBXGroup;
+			children = (
+				9BB8856F25112F1D00BD720A /* CellMonth.swift */,
+				9BB8857025112F1D00BD720A /* CellMonth.xib */,
+			);
+			path = MonthCell;
 			sourceTree = "<group>";
 		};
 		9BE5AE59250B5BC0003DB41C /* CommonLib */ = {
@@ -306,17 +395,22 @@
 			files = (
 				9B0294D5250FC2B20053EA90 /* Event.json in Resources */,
 				9BB779332508BA08006ADA98 /* CalendarViewController.xib in Resources */,
-				18F461852510AF3E0090838E /* CellTableWeek.xib in Resources */,
+				9BB8856D25112E6E00BD720A /* MonthVC.xib in Resources */,
 				18F4617A2510A9CF0090838E /* WeekVC.xib in Resources */,
+				9BB8857225112F1D00BD720A /* CellMonth.xib in Resources */,
 				E945BC492507A162001B4D25 /* LaunchScreen.storyboard in Resources */,
+				1842EF4C2512116D0083C49D /* CellYear.xib in Resources */,
 				18F461892510B0C70090838E /* CellWeekDay.xib in Resources */,
+				1842EF50251216EB0083C49D /* CellMonthYear.xib in Resources */,
 				9B1246FF250AB0FC002D2EDF /* CalendarVC.xib in Resources */,
 				18F4618D2510B5F40090838E /* CellWeekHours.xib in Resources */,
 				9BE5AE58250B15DE003DB41C /* CellCalendar.xib in Resources */,
 				9BF1695F250A307B003D7FDB /* CellCollectionViewCell.xib in Resources */,
 				9BF16963250A30CF003D7FDB /* CellDate.xib in Resources */,
+				1842EF4725120FA60083C49D /* YearVC.xib in Resources */,
 				18F461802510AB3D0090838E /* CellWeek.xib in Resources */,
 				E945BC462507A162001B4D25 /* Assets.xcassets in Resources */,
+				9BB885652510FC4800BD720A /* DayInWeek.xib in Resources */,
 				E945BC442507A160001B4D25 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,22 +422,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BB8857125112F1D00BD720A /* CellMonth.swift in Sources */,
+				1842EF4625120FA60083C49D /* YearVC.swift in Sources */,
 				9BB779322508BA08006ADA98 /* CalendarViewController.swift in Sources */,
+				9BB885632510FC3D00BD720A /* DayInWeek.swift in Sources */,
 				18F4617F2510AB3D0090838E /* CellWeek.swift in Sources */,
 				18A9CF0A250F77570066DC0A /* ExtensionCalendar.swift in Sources */,
 				18A9CF08250F772F0066DC0A /* ExtensionDate.swift in Sources */,
 				9BE5AE5C250B5BE6003DB41C /* DateExtensions.swift in Sources */,
 				E945BC412507A160001B4D25 /* ViewController.swift in Sources */,
 				18F461882510B0C70090838E /* CellWeekDay.swift in Sources */,
+				9BB88567251128AE00BD720A /* GetData.swift in Sources */,
+				9BB8856C25112E6E00BD720A /* MonthVC.swift in Sources */,
 				9BE5AE57250B15DE003DB41C /* CellCalendar.swift in Sources */,
 				E945BC3D2507A160001B4D25 /* AppDelegate.swift in Sources */,
 				9B1246F6250AA4BC002D2EDF /* Utils.swift in Sources */,
+				1842EF4F251216EB0083C49D /* CellMonthYear.swift in Sources */,
 				9B1246FE250AB0FC002D2EDF /* CalendarVC.swift in Sources */,
 				E900C2472507A49400A86E73 /* MainCollectionViewCell.swift in Sources */,
 				18F4618C2510B5F40090838E /* CellWeekHours.swift in Sources */,
+				1842EF4B2512116D0083C49D /* CellYear.swift in Sources */,
 				9BF1695E250A307B003D7FDB /* CellCollectionViewCell.swift in Sources */,
 				18F461792510A9CF0090838E /* WeekVC.swift in Sources */,
-				18F461842510AF3E0090838E /* CellTableWeek.swift in Sources */,
 				9BF16962250A30CF003D7FDB /* CellDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

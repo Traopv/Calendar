@@ -17,6 +17,7 @@ class CellWeekHours: UITableViewCell {
     @IBOutlet weak var view5: UIView!
     @IBOutlet weak var view6: UIView!
     @IBOutlet weak var view7: UIView!
+    @IBOutlet weak var lbHours: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -29,12 +30,5 @@ class CellWeekHours: UITableViewCell {
     }
     //MARK: Setup
     func conFig(){
-        view1.layer.borderWidth = 1
-        view2.layer.borderWidth = 1
-        view3.layer.borderWidth = 1
-        view4.layer.borderWidth = 1
-        view5.layer.borderWidth = 1
-        view6.layer.borderWidth = 1
-        view7.layer.borderWidth = 1
     }
 }
