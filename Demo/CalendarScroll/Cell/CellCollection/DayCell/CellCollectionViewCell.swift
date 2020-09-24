@@ -7,14 +7,7 @@
 //
 
 import UIKit
-struct EventMonth : Decodable {
-    var date : Date
-    var activ : String
-    init(date: Date, activ: String){
-        self.date = date
-        self.activ = activ
-    }
-}
+
 class CellCollectionViewCell: UICollectionViewCell {
 
     var collectionViewFlowLayout : UICollectionViewFlowLayout!
@@ -22,7 +15,7 @@ class CellCollectionViewCell: UICollectionViewCell {
     var allDaysInMonth : [Date] = []
     var month : Int = 0
     var year : Int = 0
-    var data : [EventMonth] = [EventMonth]()
+    var data : [EventDay] = [EventDay]()
     
     var closureShowEvent: ((_ date : Date) -> Void)?
     
@@ -32,6 +25,8 @@ class CellCollectionViewCell: UICollectionViewCell {
         setUpCollectionViewItems()
         layoutSubviews()
     }
+    
+    //MARK:-
     //MARK: funtion setup
     func setUpCollectionViewItems(){
         if collectionViewFlowLayout == nil{
@@ -53,54 +48,8 @@ class CellCollectionViewCell: UICollectionViewCell {
             
             myCollection.setCollectionViewLayout(collectionViewFlowLayout, animated : true)
             
-            data = loadJson()!
+            data = GetData.loadJson1()!
         }
-    }
-    
-    func loadJson() -> [EventMonth]? {
-        if let path = Bundle.main.path(forResource: "Event", ofType: "json")
-        {
-             do {
-                     let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                     let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-                     if let result = jsonResult as? NSDictionary  {
-                        if let datas = result.object(forKey: "data") as? NSArray
-                        {
-                            let dateFormatter = DateFormatter()
-                            dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
-                            var arrs = [EventMonth]()
-                            
-                            for item in datas {
-                                if let item = item as? NSDictionary{
-                                    if let strDate = item.object(forKey: "date"), let event = item.object(forKey: "activ")
-                                    {
-                                        let date = dateFormatter.date(from: strDate as! String)!
-                                        arrs.append(EventMonth(date: date, activ: event as! String))
-                                    }
-                                }
-                            }
-                            
-                            return arrs
-                        }
-                    }
-                 } catch {
-                      // handle error
-                 }
-        }
-
-        return nil
-    }
-    func findEvent(value searchValue: Date, in array: [EventMonth]) -> String?
-    {
-
-        for item in array
-        {
-            if item.date.day == searchValue.day && item.date.month == searchValue.month && item.date.year == searchValue.year {
-                return item.activ
-            }
-        }
-
-        return nil
     }
     
     func loadData(){
@@ -108,51 +57,95 @@ class CellCollectionViewCell: UICollectionViewCell {
         myCollection.reloadData()
     }
 }
+
 extension CellCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return allDaysInMonth.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellDate", for: indexPath) as! CellDate
-        //var dayAndMonth = allDaysInMonth[indexPath.row].toString(dateFormat: "dd-MM")
         let date = allDaysInMonth[indexPath.row] as Date
         
         let currentDate = Date()
         if (currentDate.day == date.day && currentDate.month == date.month && currentDate.year == date.year){
             cell.viewCell.backgroundColor = .red
-        }
-        else{
+        } else {
             cell.viewCell.backgroundColor = .clear
         }
 
         cell.lbDay.text = date.toString(dateFormat: "dd")
+        cell.date = date
         
-        if (date.month == month){
+        if (date.month == month) {
             //thang hien tai
             
             cell.lbDay.textColor = .white
             
-        }
-        else{
+        } else {
             //thang truoc hoac hoac thang sau
             cell.lbDay.textColor = .gray
         }
         // show su kien
-        let event = findEvent(value: date, in: data)
-        if event != nil{
+        let event = GetData.findEvent1(value: date, in: data)
+        if event != nil {
             cell.imgCell.isHidden = false
-        }
-        else {
+        } else {
             cell.imgCell.isHidden = true
         }
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellDate", for: indexPath) as! CellDate
         let date = allDaysInMonth[indexPath.row] as Date
         closureShowEvent?(date)
+        cell.isSelected = true
+    }
+}
+
+//MARK:-
+extension CellCollectionViewCell: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width : CGFloat = myCollection.bounds.width
+        let height: CGFloat = myCollection.bounds.height
+        let numberOfItemInRow : CGFloat = 7
+        let numberOfRow : CGFloat = 6
+        let iLineSpaing : CGFloat = 1
+        let interItemSpacing : CGFloat = 0.5
+        let iWidth = (width - (numberOfItemInRow - 1) * interItemSpacing) / numberOfItemInRow
+        let iHeight = (height - (numberOfRow - 1) * iLineSpaing) / numberOfRow
+        
+        collectionViewFlowLayout = UICollectionViewFlowLayout()
+        collectionViewFlowLayout.itemSize = CGSize(width: iWidth, height: iHeight)
+        collectionViewFlowLayout.sectionInset = UIEdgeInsets.zero
+        collectionViewFlowLayout.scrollDirection = .vertical
+        collectionViewFlowLayout.minimumLineSpacing = iLineSpaing
+        collectionViewFlowLayout.minimumInteritemSpacing = interItemSpacing
+        return CGSize(width: iWidth, height: iHeight)
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets.zero
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1.0
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.5
     }
 }

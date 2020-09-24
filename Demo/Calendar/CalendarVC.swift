@@ -62,6 +62,7 @@ class CalendarVC: UIViewController {
         
 
     }
+    
     @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
        if gesture.direction == .right {
             if currentMonth == 1 {
@@ -72,8 +73,7 @@ class CalendarVC: UIViewController {
                lbMonth.text = "Tháng \(preMonth) - \(preYear)"
                 currentMonth = preMonth
                 currentYear = preYear
-           }
-           else{
+           } else {
                let preMonth = currentMonth - 1
                let preYear = currentYear
                allDaysInMonth = Utils.getAllDateOfMonth(month: preMonth, year: preYear)
@@ -82,28 +82,25 @@ class CalendarVC: UIViewController {
                 currentMonth = preMonth
                 currentYear = preYear
            }
-       }
-       else if gesture.direction == .left {
-        if currentMonth == 12 {
-            let newMonth = 1
-            let newYear = currentYear + 1
-            allDaysInMonth = Utils.getAllDateOfMonth(month: newMonth, year: newYear)
-            myCollection.reloadData()
-            lbMonth.text = "Tháng \(newMonth) - \(newYear)"
-            currentMonth = newMonth
-            currentYear = newYear
-        }
-        else{
-            let newMonth = currentMonth + 1
-            let newYear = currentYear
-            allDaysInMonth = Utils.getAllDateOfMonth(month: newMonth, year: newYear)
-            myCollection.reloadData()
-            lbMonth.text = "Tháng \(newMonth) - \(newYear)"
-            currentMonth = newMonth
-            currentYear = newYear
-        }
-       }
-       else if gesture.direction == .up {
+       } else if gesture.direction == .left {
+            if currentMonth == 12 {
+                let newMonth = 1
+                let newYear = currentYear + 1
+                allDaysInMonth = Utils.getAllDateOfMonth(month: newMonth, year: newYear)
+                myCollection.reloadData()
+                lbMonth.text = "Tháng \(newMonth) - \(newYear)"
+                currentMonth = newMonth
+                currentYear = newYear
+            } else {
+                let newMonth = currentMonth + 1
+                let newYear = currentYear
+                allDaysInMonth = Utils.getAllDateOfMonth(month: newMonth, year: newYear)
+                myCollection.reloadData()
+                lbMonth.text = "Tháng \(newMonth) - \(newYear)"
+                currentMonth = newMonth
+                currentYear = newYear
+            }
+       } else if gesture.direction == .up {
             let newMonth = currentMonth
             let newYear = currentYear + 1
             allDaysInMonth = Utils.getAllDateOfMonth(month: newMonth, year: newYear)
@@ -111,8 +108,7 @@ class CalendarVC: UIViewController {
             lbMonth.text = "Tháng \(newMonth) - \(newYear)"
             currentMonth = newMonth
             currentYear = newYear
-       }
-       else if gesture.direction == .down {
+       } else if gesture.direction == .down {
             let preMonth = currentMonth
             let preYear = currentYear - 1
             allDaysInMonth = Utils.getAllDateOfMonth(month: preMonth, year: preYear)
@@ -122,12 +118,14 @@ class CalendarVC: UIViewController {
             currentYear = preYear
        }
     }
+    
     override func viewWillLayoutSubviews() {
-            super.viewWillLayoutSubviews()
-            setUpCollectionViewItems()
-        }
-        //MARK: funtion setup
-    func conFig(){
+        super.viewWillLayoutSubviews()
+        setUpCollectionViewItems()
+    }
+    
+    //MARK: funtion setup
+    func conFig() {
         viewButton.layer.cornerRadius = 8
         viewButton.layer.masksToBounds = true
         btnDay.layer.cornerRadius = 8
@@ -135,7 +133,8 @@ class CalendarVC: UIViewController {
         btnMonth.layer.cornerRadius = 8
         btnMonth.layer.masksToBounds = true
     }
-    func setUpCollectionViewItems(){
+    
+    func setUpCollectionViewItems() {
         if collectionViewFlowLayout == nil{
             let width : CGFloat = 455
             let height: CGFloat = 300
@@ -156,6 +155,7 @@ class CalendarVC: UIViewController {
             myCollection.setCollectionViewLayout(collectionViewFlowLayout, animated : true)
         }
     }
+    
     static func dateFrom(year: Int, month: Int, day: Int) -> Date {
         let gregorianCalendar = NSCalendar(calendarIdentifier: .gregorian)!
         gregorianCalendar.timeZone = TimeZone(abbreviation: "GMT")!
@@ -168,6 +168,7 @@ class CalendarVC: UIViewController {
         let date = gregorianCalendar.date(from: dateComponents)!
         return date
     }
+    
     //MARK: Button
     @IBAction func btnCurrentDay(_ sender: Any) {
         let date = Date()
@@ -189,10 +190,12 @@ class CalendarVC: UIViewController {
         btnMonth.backgroundColor = #colorLiteral(red: 0.1477420032, green: 0.232701242, blue: 0.3159016967, alpha: 1)
     }
 }
+
 extension CalendarVC : UICollectionViewDelegate, UICollectionViewDataSource{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return allDaysInMonth.count
     }
@@ -205,8 +208,7 @@ extension CalendarVC : UICollectionViewDelegate, UICollectionViewDataSource{
         let currentDate = Date()
         if (currentDate.day == date.day && currentDate.month == date.month && currentDate.year == date.year){
             cell.viewCell.backgroundColor = .red
-        }
-        else{
+        } else {
             cell.viewCell.backgroundColor = .clear
         }
 
@@ -215,13 +217,10 @@ extension CalendarVC : UICollectionViewDelegate, UICollectionViewDataSource{
         if (date.month == currentMonth){
             //thang hien tai
             cell.lbDay.textColor = .white
-        }
-        else{
+        } else {
             //thang truoc hoac hoac thang sau
             cell.lbDay.textColor = .gray
         }
         return cell
     }
-    
-    
 }

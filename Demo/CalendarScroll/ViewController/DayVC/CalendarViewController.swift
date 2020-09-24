@@ -24,7 +24,7 @@ class CalendarViewController: UIViewController {
     
     
     var allDaysInMonth: [Date] = []
-    var data : [EventMonth] = [EventMonth]()
+    var data : [EventDay] = [EventDay]()
     var currentPage: Date {
         let offsetX = myCollection.contentOffset.x
         let index = Int(offsetX/myCollection.bounds.width)
@@ -51,19 +51,18 @@ class CalendarViewController: UIViewController {
         currentMonth = calendar.component(.month, from: date)
         currentYear = calendar.component(.year, from: date)
         currentDay = calendar.component(.day, from: date)
-        let dayyy = Utils.dateFrom(year: 2020, month: 09, day: 16)
-        let week = date.addWeeks(numberOfWeeks: 1)
-        print("==> date",date)
-        print("listWeek",week)
-        print("==> listDate",listMonth[1])
-        print("==> listDate",listMonth[0])
+        
         lbDayShow.text = ""
         
-        data = GetData.loadJson()!
+        data = GetData.loadJson1()!
         myCollection.register(UINib.init(nibName: "CellCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CellCollectionViewCell")
         conFig()
         lbMonth.text = "Tháng \(currentMonth) - \(currentYear)"
         self.navigationController?.isNavigationBarHidden = true
+        
+        let data1 = GetData.loadJson1()
+        let arr1 = GetData.findEvent1(value: date, in: data)
+        print("==> arr1",arr1)
     }
     
     override func viewWillLayoutSubviews() {
@@ -74,8 +73,8 @@ class CalendarViewController: UIViewController {
         setUpCollectionViewItems()
     }
     
+    //MARK:-
     //MARK: funtion setup
-    
     func conFig(){
         viewButton.layer.cornerRadius = 8
         viewButton.layer.masksToBounds = true
@@ -92,22 +91,21 @@ class CalendarViewController: UIViewController {
         btnYear.backgroundColor = #colorLiteral(red: 0.279307127, green: 0.3288925588, blue: 0.3904538155, alpha: 1)
         btnDay.backgroundColor = #colorLiteral(red: 0.1477420032, green: 0.232701242, blue: 0.3159016967, alpha: 1)
     }
+    
     func setUpCollectionViewItems(){
         if collectionViewFlowLayout == nil{
-            //let numberOfItemInRow : CGFloat = 1
             let iLineSpaing : CGFloat = 0
             let interItemSpacing : CGFloat = 0
             let iWidth = myCollection.frame.size.width
-//                (myCollection.frame.size.width - (numberOfItemInRow - 1) * interItemSpacing) / numberOfItemInRow
             let iHeight = myCollection.frame.size.height
-            
+
             collectionViewFlowLayout = UICollectionViewFlowLayout()
             collectionViewFlowLayout.itemSize = CGSize(width: iWidth, height: iHeight)
             collectionViewFlowLayout.sectionInset = UIEdgeInsets.zero
             collectionViewFlowLayout.scrollDirection = .horizontal
             collectionViewFlowLayout.minimumLineSpacing = iLineSpaing
             collectionViewFlowLayout.minimumInteritemSpacing = interItemSpacing
-            
+
             myCollection.setCollectionViewLayout(collectionViewFlowLayout, animated : true)
             myCollection.setContentOffset(CGPoint(x: myCollection.bounds.width, y: 0), animated: false)
         }
@@ -116,26 +114,33 @@ class CalendarViewController: UIViewController {
     func reloadMonthTitle() {
         lbMonth.text = "Tháng \(currentPage.month) - \(currentPage.year)"
     }
+    
+    //MARK:-
     //MARK: Button function
     
     @IBAction func btnCurrentDay(_ sender: Any) {
     }
+    
     @IBAction func btnChooseDay(_ sender: Any) {
     }
+    
     @IBAction func btnChooseWeek(_ sender: Any) {
         let weekVC = WeekVC.init()
         self.navigationController?.pushViewController(weekVC, animated: false)
     }
+    
     @IBAction func btnChooseYear(_ sender: Any) {
         let yearVC = YearVC.init()
         self.navigationController?.pushViewController(yearVC, animated: false)
     }
     
     @IBAction func btnChooseMonth(_ sender: Any) {
-        let monthVC = MonthVC.init()
+        let monthVC = MonthViewController.init()
         self.navigationController?.pushViewController(monthVC, animated: false)
     }
 }
+
+//MARK:-
 extension CalendarViewController : UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listMonth.count
@@ -150,11 +155,11 @@ extension CalendarViewController : UICollectionViewDelegate,UICollectionViewData
         cell.loadData()
         cell.closureShowEvent = { (dateChoose: Date) in
             self.lbDayShow.text = String(dateChoose.toString(dateFormat: "dd-MM-yyy"))
-            let event = GetData.findEvent(value: dateChoose, in: self.data)
+            let event = GetData.findEvent1(value: dateChoose, in: self.data)
             if event != nil {
-                self.lbEvent.text = event
-            }
-            else{
+                
+                self.lbEvent.text = String(event![0].activiti)
+            } else {
                 self.lbEvent.text = "Không có sự kiện!"
             }
         }
@@ -183,8 +188,6 @@ extension CalendarViewController : UICollectionViewDelegate,UICollectionViewData
             weak var weakSelf = self
             DispatchQueue.main.async {
                 if let strongSelf = weakSelf {
-                    //strongSelf.generatePrevDateData()
-                    
                     strongSelf.myCollection.scrollToItem(at: IndexPath(row: strongSelf.currentIndex, section: 0), at: .left, animated: false)
                     strongSelf.reloadMonthTitle()
                 }
@@ -204,8 +207,7 @@ extension CalendarViewController : UICollectionViewDelegate,UICollectionViewData
                         strongSelf.reloadMonthTitle()
                     }
                 }
-            }
-            else  {
+            } else {
                 currentIndex = index
                 reloadMonthTitle()
             }
@@ -244,9 +246,4 @@ extension CalendarViewController : UICollectionViewDelegate,UICollectionViewData
         myCollection.reloadData()
         
     }
-    
 }
-
-
-
-

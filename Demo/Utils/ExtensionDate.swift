@@ -8,7 +8,7 @@
 
 import Foundation
 extension Date {
-    func dayOfWeek() -> Int{
+    func dayOfWeek() -> Int {
         let timeZone = TimeZone(abbreviation: "GMT")
         let component =  Calendar.current.dateComponents(in: timeZone!, from: self)
         return (component.weekday ?? -1) - 1
@@ -49,19 +49,6 @@ extension Date {
         let endDate = Calendar.current.date(byAdding: .weekOfMonth, value: numberOfWeeks, to: self)
         return endDate ?? Date()
     }
-//    func addWeek(numberOfWeeks: Int) -> Date {
-//        let date = Date()
-//        var calendar = Calendar.current
-//        let firstWeek = calendar.startOfWeek(date).toString(dateFormat: "dd")
-//        let lastMonth = date.endOfMonth().toString(dateFormat: "dd")
-//        
-//        for i in Int(firstWeek)! ... 7*numberOfWeeks{
-//            while i >= 1 || i <= Int(lastMonth)! {
-//                <#code#>
-//            }
-//        }
-//        return endDate ?? Date()
-//    }
     
     // lấy ra tháng các tháng trước theo số tháng truyền vào của tháng hiện tại
     func getPreviousMonths(numberOfMonths: Int) -> Date {

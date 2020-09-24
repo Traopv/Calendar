@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,8 +18,8 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ewI-MZ-48a">
-                        <rect key="frame" x="5" y="5" width="455" height="285"/>
-                        <color key="backgroundColor" red="0.089281789959999996" green="0.12855035070000001" blue="0.16976311799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <rect key="frame" x="0.0" y="1" width="465" height="294"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cOD-gH-LAb">
                             <size key="itemSize" width="455" height="285"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -33,17 +33,17 @@
                     </collectionView>
                 </subviews>
             </view>
-            <constraints>
-                <constraint firstAttribute="bottom" secondItem="ewI-MZ-48a" secondAttribute="bottom" constant="5" id="6TO-hl-24u"/>
-                <constraint firstItem="ewI-MZ-48a" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="9mZ-sg-9qe"/>
-                <constraint firstItem="ewI-MZ-48a" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="SIu-Vy-Gox"/>
-                <constraint firstAttribute="trailing" secondItem="ewI-MZ-48a" secondAttribute="trailing" constant="5" id="oid-Do-f0b"/>
-            </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ewI-MZ-48a" secondAttribute="bottom" id="6TO-hl-24u"/>
+                <constraint firstItem="ewI-MZ-48a" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="1" id="9mZ-sg-9qe"/>
+                <constraint firstItem="ewI-MZ-48a" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="SIu-Vy-Gox"/>
+                <constraint firstAttribute="trailing" secondItem="ewI-MZ-48a" secondAttribute="trailing" id="oid-Do-f0b"/>
+            </constraints>
             <connections>
                 <outlet property="myCollection" destination="ewI-MZ-48a" id="Awi-3D-p8O"/>
             </connections>
-            <point key="canvasLocation" x="82" y="69"/>
+            <point key="canvasLocation" x="-53" y="59"/>
         </collectionViewCell>
     </objects>
 </document>

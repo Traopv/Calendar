@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 extension Calendar{
     mutating func dayOfWeek(_ date: Date) -> Int {
         var dayOfWeek = self.component(.weekday, from: date) - self.firstWeekday

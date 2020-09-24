@@ -9,7 +9,8 @@
 import UIKit
 
 class Utils: NSObject {
-    static func getAllDayWeek(date : Date,month: Int,year: Int) ->[Int]{
+    
+    static func getAllDayWeek(date : Date,month: Int,year: Int) ->[Int] {
         var allDay : [Int] = [Int]()
         var calendar = Calendar.current
         let startWeek = calendar.startOfWeek(date)
@@ -23,12 +24,10 @@ class Utils: NSObject {
         if month == 1 {
             preMonth = 12
             numberDays = calendar.getAllDaysInMonth(preMonth, year - 1)
-        }
-        else if month == 12 {
+        } else if month == 12 {
             newMonth = 1
             numberDays = calendar.getAllDaysInMonth(newMonth, year + 1)
-        }
-        else{
+        } else {
             numberDays = calendar.getAllDaysInMonth(month, year)
         }
         var startDay = 1
@@ -38,14 +37,13 @@ class Utils: NSObject {
             if i > numberDays {
                 allDay.insert(startDay, at: allDay.endIndex)
                 startDay += 1
-            }
-            else{
+            } else {
                 allDay.append(i)
             }
         }
         return allDay
     }
-    static func getDayInMonth(month: Int, year: Int) -> [Date]{
+    static func getDayInMonth(month: Int, year: Int) -> [Date] {
         var allDaysInMonth : [Date] = [Date]()
             let date = Date()
             let calendar = Calendar.current
@@ -67,42 +65,37 @@ class Utils: NSObject {
                 var numberDaysPre = calendar.getAllDaysInMonth(preMonth, preYear)
                 
                 if dayInWeek == 0 {
-                    if dayInWeek - 1 == 0{
-                        for _ in 1 ... 6{
+                    if dayInWeek - 1 == 0 {
+                        for _ in 1 ... 6 {
                             let datePre = dateFrom(year: preYear, month: preMonth, day: numberDaysPre)
                             allDaysInMonth.insert(datePre, at: 0)
                             numberDaysPre -= 1
                         }
                     }
-                }
-                    // dayInWeek là vào t2
-                else if dayInWeek == 1{
-                }
-                else {
+                } else if dayInWeek == 1 {
+                    
+                } else {
                     for _ in 1 ..< dayInWeek{
                         let datePre = dateFrom(year: preYear, month: preMonth, day: numberDaysPre)
                         allDaysInMonth.insert(datePre, at: 0)
                         numberDaysPre -= 1
                     }
                 }
-            }
-            else {
+            } else {
                 let preMonth = month - 1
                 let preYear = year
                 var numberDaysPre = calendar.getAllDaysInMonth(preMonth, year)
                 if dayInWeek == 0 {
-                    if dayInWeek - 1 == 0{
-                        for _ in 1 ... 6{
+                    if dayInWeek - 1 == 0 {
+                        for _ in 1 ... 6 {
                             let datePre = dateFrom(year: preYear, month: preMonth, day: numberDaysPre)
                             allDaysInMonth.insert(datePre, at: 0)
                             numberDaysPre -= 1
                         }
                     }
-                }
-                    // dayInWeek là vào t2
-                else if dayInWeek == 1{
-                }
-                else {
+                } else if dayInWeek == 1 {
+                    
+                } else {
                     for _ in 1 ..< dayInWeek{
                         let datePre = dateFrom(year: preYear, month: preMonth, day: numberDaysPre)
                         allDaysInMonth.insert(datePre, at: 0)
@@ -112,7 +105,8 @@ class Utils: NSObject {
             }
             return allDaysInMonth
         }
-    static func getAllDateOfMonth(month: Int, year: Int) -> [Date]{
+    
+    static func getAllDateOfMonth(month: Int, year: Int) -> [Date] {
         var allDaysInMonth : [Date] = [Date]()
         let date = Date()
         let calendar = Calendar.current
@@ -134,43 +128,38 @@ class Utils: NSObject {
             var numberDaysPre = calendar.getAllDaysInMonth(preMonth, preYear)
             
             if dayInWeek == 0 {
-                if dayInWeek - 1 == 0{
-                    for _ in 1 ... 6{
+                if dayInWeek - 1 == 0 {
+                    for _ in 1 ... 6 {
                         let datePre = dateFrom(year: preYear, month: preMonth, day: numberDaysPre)
                         allDaysInMonth.insert(datePre, at: 0)
                         numberDaysPre -= 1
                     }
                 }
-            }
-                // dayInWeek là vào t2
-            else if dayInWeek == 1{
-            }
-            else {
-                for _ in 1 ..< dayInWeek{
+            } else if dayInWeek == 1 {
+                
+            } else {
+                for _ in 1 ..< dayInWeek {
                     let datePre = dateFrom(year: preYear, month: preMonth, day: numberDaysPre)
                     allDaysInMonth.insert(datePre, at: 0)
                     numberDaysPre -= 1
                 }
             }
-        }
-        else {
+        } else {
             let preMonth = month - 1
             let preYear = year
             var numberDaysPre = calendar.getAllDaysInMonth(preMonth, year)
             if dayInWeek == 0 {
-                if dayInWeek - 1 == 0{
-                    for _ in 1 ... 6{
+                if dayInWeek - 1 == 0 {
+                    for _ in 1 ... 6 {
                         let datePre = dateFrom(year: preYear, month: preMonth, day: numberDaysPre)
                         allDaysInMonth.insert(datePre, at: 0)
                         numberDaysPre -= 1
                     }
                 }
-            }
-                // dayInWeek là vào t2
-            else if dayInWeek == 1{
-            }
-            else {
-                for _ in 1 ..< dayInWeek{
+            } else if dayInWeek == 1 {
+                
+            } else {
+                for _ in 1 ..< dayInWeek {
                     let datePre = dateFrom(year: preYear, month: preMonth, day: numberDaysPre)
                     allDaysInMonth.insert(datePre, at: 0)
                     numberDaysPre -= 1
@@ -181,12 +170,11 @@ class Utils: NSObject {
             if month == 12 {
                 let newMonth = month + 1
                 let newYear = year + 1
-                for i in 1 ... (42 - allDaysInMonth.count){
+                for i in 1 ... (42 - allDaysInMonth.count) {
                     let dateNew = dateFrom(year: newYear, month: newMonth, day: i)
                     allDaysInMonth.insert(dateNew, at: allDaysInMonth.endIndex)
                 }
-            }
-            else{
+            } else {
                 let newMonth = month + 1
                 let newYear = year
                 for i in 1 ... (42 - allDaysInMonth.count){

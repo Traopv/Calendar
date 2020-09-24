@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1819908A2518954200DB26A8 /* DetailMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181990892518954200DB26A8 /* DetailMonth.swift */; };
+		1819908E2518954D00DB26A8 /* DetailMonth.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1819908D2518954D00DB26A8 /* DetailMonth.xib */; };
+		18199093251896C000DB26A8 /* CellDetailMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18199091251896C000DB26A8 /* CellDetailMonth.swift */; };
+		18199094251896C000DB26A8 /* CellDetailMonth.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18199092251896C000DB26A8 /* CellDetailMonth.xib */; };
+		181990C72518A3C600DB26A8 /* KLCPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 181990C62518A3C600DB26A8 /* KLCPopup.m */; };
+		183357C2251B3A7C003639F9 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183357C1251B3A7C003639F9 /* Struct.swift */; };
 		1842EF4625120FA60083C49D /* YearVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842EF4425120FA60083C49D /* YearVC.swift */; };
 		1842EF4725120FA60083C49D /* YearVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1842EF4525120FA60083C49D /* YearVC.xib */; };
 		1842EF4B2512116D0083C49D /* CellYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842EF492512116D0083C49D /* CellYear.swift */; };
@@ -15,6 +21,12 @@
 		1842EF50251216EB0083C49D /* CellMonthYear.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1842EF4E251216EB0083C49D /* CellMonthYear.xib */; };
 		18A9CF08250F772F0066DC0A /* ExtensionDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A9CF07250F772F0066DC0A /* ExtensionDate.swift */; };
 		18A9CF0A250F77570066DC0A /* ExtensionCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A9CF09250F77570066DC0A /* ExtensionCalendar.swift */; };
+		18E28ED025198D97005A42D8 /* MonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E28ECE25198D97005A42D8 /* MonthViewController.swift */; };
+		18E28ED125198D97005A42D8 /* MonthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E28ECF25198D97005A42D8 /* MonthViewController.xib */; };
+		18E28ED725198E88005A42D8 /* MonthVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E28ED525198E88005A42D8 /* MonthVCCell.swift */; };
+		18E28ED825198E88005A42D8 /* MonthVCCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E28ED625198E88005A42D8 /* MonthVCCell.xib */; };
+		18E28EDE25198F14005A42D8 /* DayInMonthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E28EDC25198F14005A42D8 /* DayInMonthCell.swift */; };
+		18E28EDF25198F14005A42D8 /* DayInMonthCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E28EDD25198F14005A42D8 /* DayInMonthCell.xib */; };
 		18F461792510A9CF0090838E /* WeekVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F461772510A9CF0090838E /* WeekVC.swift */; };
 		18F4617A2510A9CF0090838E /* WeekVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F461782510A9CF0090838E /* WeekVC.xib */; };
 		18F4617F2510AB3D0090838E /* CellWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4617D2510AB3D0090838E /* CellWeek.swift */; };
@@ -52,6 +64,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		181990892518954200DB26A8 /* DetailMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMonth.swift; sourceTree = "<group>"; };
+		1819908D2518954D00DB26A8 /* DetailMonth.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailMonth.xib; sourceTree = "<group>"; };
+		18199091251896C000DB26A8 /* CellDetailMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDetailMonth.swift; sourceTree = "<group>"; };
+		18199092251896C000DB26A8 /* CellDetailMonth.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellDetailMonth.xib; sourceTree = "<group>"; };
+		181990B82518A07200DB26A8 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		181990C52518A3C600DB26A8 /* KLCPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLCPopup.h; sourceTree = "<group>"; };
+		181990C62518A3C600DB26A8 /* KLCPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLCPopup.m; sourceTree = "<group>"; };
+		183357C1251B3A7C003639F9 /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
 		1842EF4425120FA60083C49D /* YearVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearVC.swift; sourceTree = "<group>"; };
 		1842EF4525120FA60083C49D /* YearVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YearVC.xib; sourceTree = "<group>"; };
 		1842EF492512116D0083C49D /* CellYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellYear.swift; sourceTree = "<group>"; };
@@ -60,6 +80,12 @@
 		1842EF4E251216EB0083C49D /* CellMonthYear.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellMonthYear.xib; sourceTree = "<group>"; };
 		18A9CF07250F772F0066DC0A /* ExtensionDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDate.swift; sourceTree = "<group>"; };
 		18A9CF09250F77570066DC0A /* ExtensionCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCalendar.swift; sourceTree = "<group>"; };
+		18E28ECE25198D97005A42D8 /* MonthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthViewController.swift; sourceTree = "<group>"; };
+		18E28ECF25198D97005A42D8 /* MonthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthViewController.xib; sourceTree = "<group>"; };
+		18E28ED525198E88005A42D8 /* MonthVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthVCCell.swift; sourceTree = "<group>"; };
+		18E28ED625198E88005A42D8 /* MonthVCCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthVCCell.xib; sourceTree = "<group>"; };
+		18E28EDC25198F14005A42D8 /* DayInMonthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInMonthCell.swift; sourceTree = "<group>"; };
+		18E28EDD25198F14005A42D8 /* DayInMonthCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayInMonthCell.xib; sourceTree = "<group>"; };
 		18F461772510A9CF0090838E /* WeekVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekVC.swift; sourceTree = "<group>"; };
 		18F461782510A9CF0090838E /* WeekVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeekVC.xib; sourceTree = "<group>"; };
 		18F4617D2510AB3D0090838E /* CellWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellWeek.swift; sourceTree = "<group>"; };
@@ -109,9 +135,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		181990882518951E00DB26A8 /* ViewMonth */ = {
+			isa = PBXGroup;
+			children = (
+				181990892518954200DB26A8 /* DetailMonth.swift */,
+				1819908D2518954D00DB26A8 /* DetailMonth.xib */,
+			);
+			path = ViewMonth;
+			sourceTree = "<group>";
+		};
+		18199090251896A400DB26A8 /* CellMonth */ = {
+			isa = PBXGroup;
+			children = (
+				18199091251896C000DB26A8 /* CellDetailMonth.swift */,
+				18199092251896C000DB26A8 /* CellDetailMonth.xib */,
+			);
+			path = CellMonth;
+			sourceTree = "<group>";
+		};
+		181990C32518A36000DB26A8 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				181990C42518A36B00DB26A8 /* KLCPopup */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		181990C42518A36B00DB26A8 /* KLCPopup */ = {
+			isa = PBXGroup;
+			children = (
+				181990C52518A3C600DB26A8 /* KLCPopup.h */,
+				181990C62518A3C600DB26A8 /* KLCPopup.m */,
+			);
+			path = KLCPopup;
+			sourceTree = "<group>";
+		};
 		1842EF4325120B650083C49D /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				18E28ECD25198D71005A42D8 /* MonthController */,
 				18F461722510A9540090838E /* DayVC */,
 				18F461762510A9A50090838E /* WeekVC */,
 				9BB8856825112E4A00BD720A /* MonthVC */,
@@ -141,6 +203,34 @@
 			path = CalendarScroll;
 			sourceTree = "<group>";
 		};
+		18E28ECD25198D71005A42D8 /* MonthController */ = {
+			isa = PBXGroup;
+			children = (
+				18E28ECE25198D97005A42D8 /* MonthViewController.swift */,
+				18E28ECF25198D97005A42D8 /* MonthViewController.xib */,
+			);
+			path = MonthController;
+			sourceTree = "<group>";
+		};
+		18E28ED425198E66005A42D8 /* MonthVCCell */ = {
+			isa = PBXGroup;
+			children = (
+				18E28EDB25198EED005A42D8 /* DayMonthVCCell */,
+				18E28ED525198E88005A42D8 /* MonthVCCell.swift */,
+				18E28ED625198E88005A42D8 /* MonthVCCell.xib */,
+			);
+			path = MonthVCCell;
+			sourceTree = "<group>";
+		};
+		18E28EDB25198EED005A42D8 /* DayMonthVCCell */ = {
+			isa = PBXGroup;
+			children = (
+				18E28EDC25198F14005A42D8 /* DayInMonthCell.swift */,
+				18E28EDD25198F14005A42D8 /* DayInMonthCell.xib */,
+			);
+			path = DayMonthVCCell;
+			sourceTree = "<group>";
+		};
 		18F461722510A9540090838E /* DayVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +243,7 @@
 		18F461732510A96A0090838E /* CellCollection */ = {
 			isa = PBXGroup;
 			children = (
+				18E28ED425198E66005A42D8 /* MonthVCCell */,
 				1842EF48251211550083C49D /* CellYear */,
 				9BB8856E25112EC700BD720A /* MonthCell */,
 				18F4617C2510AB220090838E /* WeekCell */,
@@ -193,6 +284,7 @@
 		18F4617B2510AB100090838E /* TableCell */ = {
 			isa = PBXGroup;
 			children = (
+				18199090251896A400DB26A8 /* CellMonth */,
 				18F461812510AF190090838E /* CellWeek */,
 			);
 			path = TableCell;
@@ -225,6 +317,7 @@
 				18A9CF07250F772F0066DC0A /* ExtensionDate.swift */,
 				18A9CF09250F77570066DC0A /* ExtensionCalendar.swift */,
 				9BB88566251128AE00BD720A /* GetData.swift */,
+				183357C1251B3A7C003639F9 /* Struct.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -243,6 +336,7 @@
 		9BB885602510FBEF00BD720A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				181990882518951E00DB26A8 /* ViewMonth */,
 				9BB885612510FBF600BD720A /* ViewWeek */,
 			);
 			path = View;
@@ -319,7 +413,9 @@
 		E945BC3B2507A160001B4D25 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				181990B82518A07200DB26A8 /* Bridging-Header.h */,
 				E945BC3C2507A160001B4D25 /* AppDelegate.swift */,
+				181990C32518A36000DB26A8 /* Library */,
 				9B1246F7250AAEF3002D2EDF /* Calendar */,
 				18A9CF0B250F7B160066DC0A /* CalendarScroll */,
 				9BE5AE59250B5BC0003DB41C /* CommonLib */,
@@ -394,14 +490,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B0294D5250FC2B20053EA90 /* Event.json in Resources */,
+				18E28ED825198E88005A42D8 /* MonthVCCell.xib in Resources */,
 				9BB779332508BA08006ADA98 /* CalendarViewController.xib in Resources */,
 				9BB8856D25112E6E00BD720A /* MonthVC.xib in Resources */,
 				18F4617A2510A9CF0090838E /* WeekVC.xib in Resources */,
 				9BB8857225112F1D00BD720A /* CellMonth.xib in Resources */,
 				E945BC492507A162001B4D25 /* LaunchScreen.storyboard in Resources */,
 				1842EF4C2512116D0083C49D /* CellYear.xib in Resources */,
+				18E28ED125198D97005A42D8 /* MonthViewController.xib in Resources */,
 				18F461892510B0C70090838E /* CellWeekDay.xib in Resources */,
 				1842EF50251216EB0083C49D /* CellMonthYear.xib in Resources */,
+				18199094251896C000DB26A8 /* CellDetailMonth.xib in Resources */,
+				1819908E2518954D00DB26A8 /* DetailMonth.xib in Resources */,
 				9B1246FF250AB0FC002D2EDF /* CalendarVC.xib in Resources */,
 				18F4618D2510B5F40090838E /* CellWeekHours.xib in Resources */,
 				9BE5AE58250B15DE003DB41C /* CellCalendar.xib in Resources */,
@@ -411,6 +511,7 @@
 				18F461802510AB3D0090838E /* CellWeek.xib in Resources */,
 				E945BC462507A162001B4D25 /* Assets.xcassets in Resources */,
 				9BB885652510FC4800BD720A /* DayInWeek.xib in Resources */,
+				18E28EDF25198F14005A42D8 /* DayInMonthCell.xib in Resources */,
 				E945BC442507A160001B4D25 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,20 +528,27 @@
 				9BB779322508BA08006ADA98 /* CalendarViewController.swift in Sources */,
 				9BB885632510FC3D00BD720A /* DayInWeek.swift in Sources */,
 				18F4617F2510AB3D0090838E /* CellWeek.swift in Sources */,
+				1819908A2518954200DB26A8 /* DetailMonth.swift in Sources */,
 				18A9CF0A250F77570066DC0A /* ExtensionCalendar.swift in Sources */,
 				18A9CF08250F772F0066DC0A /* ExtensionDate.swift in Sources */,
+				18E28ED025198D97005A42D8 /* MonthViewController.swift in Sources */,
 				9BE5AE5C250B5BE6003DB41C /* DateExtensions.swift in Sources */,
 				E945BC412507A160001B4D25 /* ViewController.swift in Sources */,
+				18199093251896C000DB26A8 /* CellDetailMonth.swift in Sources */,
+				181990C72518A3C600DB26A8 /* KLCPopup.m in Sources */,
 				18F461882510B0C70090838E /* CellWeekDay.swift in Sources */,
 				9BB88567251128AE00BD720A /* GetData.swift in Sources */,
 				9BB8856C25112E6E00BD720A /* MonthVC.swift in Sources */,
+				18E28EDE25198F14005A42D8 /* DayInMonthCell.swift in Sources */,
 				9BE5AE57250B15DE003DB41C /* CellCalendar.swift in Sources */,
+				183357C2251B3A7C003639F9 /* Struct.swift in Sources */,
 				E945BC3D2507A160001B4D25 /* AppDelegate.swift in Sources */,
 				9B1246F6250AA4BC002D2EDF /* Utils.swift in Sources */,
 				1842EF4F251216EB0083C49D /* CellMonthYear.swift in Sources */,
 				9B1246FE250AB0FC002D2EDF /* CalendarVC.swift in Sources */,
 				E900C2472507A49400A86E73 /* MainCollectionViewCell.swift in Sources */,
 				18F4618C2510B5F40090838E /* CellWeekHours.swift in Sources */,
+				18E28ED725198E88005A42D8 /* MonthVCCell.swift in Sources */,
 				1842EF4B2512116D0083C49D /* CellYear.swift in Sources */,
 				9BF1695E250A307B003D7FDB /* CellCollectionViewCell.swift in Sources */,
 				18F461792510A9CF0090838E /* WeekVC.swift in Sources */,
@@ -595,8 +703,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smile.user.app.com.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/apple/Desktop/SourcTree/Training_Calendar/Demo/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -613,8 +723,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smile.user.app.com.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/apple/Desktop/SourcTree/Training_Calendar/Demo/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

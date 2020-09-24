@@ -10,6 +10,7 @@ import UIKit
 
 class WeekVC: UIViewController {
 
+    var collectionViewFlowLayout : UICollectionViewFlowLayout!
     @IBOutlet weak var viewButton: UIView!
     @IBOutlet weak var btnDay: UIButton!
     @IBOutlet weak var btnWeek: UIButton!
@@ -45,10 +46,10 @@ class WeekVC: UIViewController {
         currentMonth = calendar.component(.month, from: date)
         currentYear = calendar.component(.year, from: date)
         currentDay = calendar.component(.day, from: date)
-        
-        
         conFig()
     }
+    
+    //MARK:-
     //MARK: Set Up
     func conFig(){
         myCollection.register(UINib.init(nibName: "CellWeek", bundle: nil), forCellWithReuseIdentifier: "CellWeek")
@@ -68,38 +69,46 @@ class WeekVC: UIViewController {
         btnWeek.layer.masksToBounds = true
         btnWeek.backgroundColor = #colorLiteral(red: 0.1486144364, green: 0.2291531265, blue: 0.3167444468, alpha: 1)
     }
+    
+    //MARK:-
     //MARK: Button Function
     @IBAction func chooseDay(_ sender: Any) {
         let dayVC = CalendarViewController.init()
         self.navigationController?.pushViewController(dayVC, animated: false)
     }
+    
     @IBAction func chooseWeek(_ sender: Any) {
         
     }
+    
     @IBAction func btnChooseMonth(_ sender: Any) {
-        let monthVC = MonthVC.init()
+        let monthVC = MonthViewController.init()
         self.navigationController?.pushViewController(monthVC, animated: false)
     }
+    
     @IBAction func btnChooseYear(_ sender: Any) {
+        let yearVC = YearVC.init()
+        self.navigationController?.pushViewController(yearVC, animated: false)
     }
 }
 
-extension WeekVC: UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate{
+//MARK:-
+extension WeekVC: UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate{
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return listMonth.count
         return listWeek.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellWeek", for: indexPath) as! CellWeek
-        let date    = listWeek[indexPath.row]
+        let date = listWeek[indexPath.row]
         cell.currentMonth = date.month
         cell.currentYear = date.year
         cell.currentDay = date.day
         cell.loadData(currentDate: date)
-        
         return cell
     }
+    
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         
     }
@@ -140,8 +149,7 @@ extension WeekVC: UICollectionViewDelegate,UICollectionViewDataSource,UIScrollVi
                         strongSelf.myCollection.scrollToItem(at: IndexPath(row: strongSelf.currentIndex, section: 0), at: .left, animated: false)
                     }
                 }
-            }
-            else  {
+            } else {
                 currentIndex = index
             }
         }
@@ -176,4 +184,31 @@ extension WeekVC: UICollectionViewDelegate,UICollectionViewDataSource,UIScrollVi
         
     }
     
+}
+
+//MARK:-
+extension WeekVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return collectionView.bounds.size
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets.zero
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
+    }
 }

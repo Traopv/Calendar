@@ -1,30 +1,44 @@
 {
-    "data":
+     "data":
     [
         {
-            "date" : "02-09-2020 00:00:00",
-            "activ" : "Ngày quốc khánh Việt Nam"
+            "date" : "02-09-2020 12:00:00",
+            "event" : [
+                {
+                    "hours" : "07:00:00",
+                    "activiti" : "Bắt xe về quê"
+                },
+                {
+                    "hours" : "20:00:00",
+                    "activiti" : "Đi ăn tối với gia đình"
+                }
+            ]
         },
         {
-            "date" : "03-09-2020 00:00:00",
-            "activ" : "Ngày sinh nhật"
+            "date" : "24-09-2020 12:00:00",
+            "event" : [
+                {
+                    "hours" : "07:00:00",
+                    "activiti" : "Đi chơi với ny"
+                },
+                {
+                    "hours" : "20:00:00",
+                    "activiti" : "Đi xem film"
+                }
+            ]
         },
         {
-            "date" : "05-09-2020 00:00:00",
-            "activ" : "Ngày họp"
-        },
-        {
-            "date" : "07-09-2020 00:00:00",
-            "activ" : "Ngày học toán"
-        },
-        {
-            "date" : "08-09-2020 00:00:00",
-            "activ" : "Ngày học văn"
-        },
-        {
-            "date" : "10-09-2020 00:00:00",
-            "activ" : "Ngày học anh"
-        },
+            "date" : "27-09-2020 12:00:00",
+            "event" : [
+                {
+                    "hours" : "15:00:00",
+                    "activiti" : "Lên trường"
+                },
+                {
+                    "hours" : "22:00:00",
+                    "activiti" : "Đi ngủ"
+                }
+            ]
+        }
     ]
-
 }

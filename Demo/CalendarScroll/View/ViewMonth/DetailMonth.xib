@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DetailMonth" customModule="Demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="250"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Vy-n4-Van">
+                    <rect key="frame" x="16" y="58" width="368" height="192"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="hHs-gd-KWY"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="gTb-qj-Bo9"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PgL-Xl-CtA">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sự kiện : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7k8-jS-mE3">
+                            <rect key="frame" x="99" y="13" width="80" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20-09-2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a21-wG-q3H">
+                            <rect key="frame" x="198" y="13" width="113" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" systemColor="systemRedColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.12549552319999999" green="0.16820439700000001" blue="0.2174127102" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="a21-wG-q3H" firstAttribute="leading" secondItem="7k8-jS-mE3" secondAttribute="trailing" constant="19" id="0Je-xf-dfn"/>
+                        <constraint firstItem="7k8-jS-mE3" firstAttribute="centerY" secondItem="PgL-Xl-CtA" secondAttribute="centerY" id="68n-L2-l9K"/>
+                        <constraint firstItem="7k8-jS-mE3" firstAttribute="leading" secondItem="PgL-Xl-CtA" secondAttribute="leading" constant="99" id="Flc-Er-hYP"/>
+                        <constraint firstAttribute="height" constant="50" id="I2f-ay-srL"/>
+                        <constraint firstItem="a21-wG-q3H" firstAttribute="centerY" secondItem="PgL-Xl-CtA" secondAttribute="centerY" id="gSX-4K-WUa"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="PgL-Xl-CtA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="4uD-t6-6TI"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8Vy-n4-Van" secondAttribute="trailing" constant="16" id="H9k-sd-bG4"/>
+                <constraint firstItem="8Vy-n4-Van" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="arj-OU-HOf"/>
+                <constraint firstItem="8Vy-n4-Van" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="bHf-Lu-b5a"/>
+                <constraint firstItem="PgL-Xl-CtA" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="dhj-54-sYV"/>
+                <constraint firstItem="PgL-Xl-CtA" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="gd9-qL-of7"/>
+                <constraint firstItem="8Vy-n4-Van" firstAttribute="top" secondItem="PgL-Xl-CtA" secondAttribute="bottom" constant="8" symbolic="YES" id="hwz-GM-wFf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="lbDate" destination="a21-wG-q3H" id="ZY3-K3-fNo"/>
+                <outlet property="myTable" destination="8Vy-n4-Van" id="WQm-CR-VpD"/>
+            </connections>
+            <point key="canvasLocation" x="-1415.625" y="-26.25"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

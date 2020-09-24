@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,12 +20,6 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wId-l8-i7k">
                         <rect key="frame" x="0.0" y="0.0" width="144" height="106"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWd-kd-j4L">
-                                <rect key="frame" x="10" y="10" width="25" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ngày quốc tế Việt Nam" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKQ-pp-meT">
                                 <rect key="frame" x="35" y="52" width="100" height="18"/>
                                 <constraints>
@@ -35,29 +29,39 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWd-kd-j4L">
+                                <rect key="frame" x="8" y="4" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="b7B-Cm-d0d"/>
+                                    <constraint firstAttribute="height" constant="35" id="t52-sw-dq0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1048829183" green="0.1433747709" blue="0.17907822130000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="vWd-kd-j4L" firstAttribute="leading" secondItem="wId-l8-i7k" secondAttribute="leading" constant="10" id="Wu0-bl-4Cl"/>
+                            <constraint firstItem="vWd-kd-j4L" firstAttribute="leading" secondItem="wId-l8-i7k" secondAttribute="leading" constant="8" id="Wu0-bl-4Cl"/>
                             <constraint firstAttribute="bottom" secondItem="HKQ-pp-meT" secondAttribute="bottom" constant="36" id="mol-bV-RAs"/>
                             <constraint firstItem="HKQ-pp-meT" firstAttribute="centerX" secondItem="wId-l8-i7k" secondAttribute="centerX" constant="13" id="p12-wx-DIV"/>
-                            <constraint firstItem="vWd-kd-j4L" firstAttribute="top" secondItem="wId-l8-i7k" secondAttribute="top" constant="10" id="tj5-4I-qKl"/>
+                            <constraint firstItem="vWd-kd-j4L" firstAttribute="top" secondItem="wId-l8-i7k" secondAttribute="top" constant="4" id="tj5-4I-qKl"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="wId-l8-i7k" secondAttribute="bottom" id="5jy-TV-uFV"/>
                 <constraint firstItem="wId-l8-i7k" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="BjH-W5-VSP"/>
                 <constraint firstAttribute="trailing" secondItem="wId-l8-i7k" secondAttribute="trailing" id="C8V-HV-Vvg"/>
                 <constraint firstItem="wId-l8-i7k" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="PTc-MF-ohI"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
                 <outlet property="lbDay" destination="vWd-kd-j4L" id="WHM-39-CzF"/>
                 <outlet property="lbEvent" destination="HKQ-pp-meT" id="5dJ-tA-cnC"/>
             </connections>
-            <point key="canvasLocation" x="-312" y="-16"/>
+            <point key="canvasLocation" x="-410" y="69"/>
         </collectionViewCell>
     </objects>
 </document>

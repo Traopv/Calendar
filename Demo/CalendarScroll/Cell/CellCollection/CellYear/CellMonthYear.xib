@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,35 +18,48 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2i6-Hv-dsl">
-                        <rect key="frame" x="5" y="5" width="40" height="39"/>
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="49"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6W-Jj-p1R">
-                                <rect key="frame" x="7.5" y="7.5" width="25" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <rect key="frame" x="16" y="15.5" width="18.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-filled-circle-48" translatesAutoresizingMaskIntoConstraints="NO" id="0jF-SB-AA1">
+                                <rect key="frame" x="22" y="43" width="5" height="5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="AC7-fd-JZm"/>
+                                    <constraint firstAttribute="width" constant="5" id="muV-kc-irx"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="S6W-Jj-p1R" firstAttribute="centerX" secondItem="2i6-Hv-dsl" secondAttribute="centerX" id="DCq-6U-74s"/>
-                            <constraint firstItem="S6W-Jj-p1R" firstAttribute="centerY" secondItem="2i6-Hv-dsl" secondAttribute="centerY" id="WOG-of-L0Z"/>
+                            <constraint firstItem="0jF-SB-AA1" firstAttribute="centerX" secondItem="2i6-Hv-dsl" secondAttribute="centerX" constant="-0.5" id="BEn-rW-6gN"/>
+                            <constraint firstAttribute="bottom" secondItem="0jF-SB-AA1" secondAttribute="bottom" constant="1" id="H06-0e-gKe"/>
+                            <constraint firstItem="S6W-Jj-p1R" firstAttribute="centerX" secondItem="2i6-Hv-dsl" secondAttribute="centerX" id="KUk-eO-OQe"/>
+                            <constraint firstItem="S6W-Jj-p1R" firstAttribute="centerY" secondItem="2i6-Hv-dsl" secondAttribute="centerY" id="jpn-m3-Cux"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
-            <constraints>
-                <constraint firstItem="2i6-Hv-dsl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="8YO-fu-qol"/>
-                <constraint firstItem="2i6-Hv-dsl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="AEf-PM-6Vq"/>
-                <constraint firstAttribute="trailing" secondItem="2i6-Hv-dsl" secondAttribute="trailing" constant="5" id="QvM-YA-9Ei"/>
-                <constraint firstAttribute="bottom" secondItem="2i6-Hv-dsl" secondAttribute="bottom" constant="5" id="V1i-Ws-zEk"/>
-            </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="2i6-Hv-dsl" secondAttribute="bottom" id="IKa-Ml-NbK"/>
+                <constraint firstItem="2i6-Hv-dsl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Pgu-ZU-YGE"/>
+                <constraint firstAttribute="trailing" secondItem="2i6-Hv-dsl" secondAttribute="trailing" id="bcB-Be-8R9"/>
+                <constraint firstItem="2i6-Hv-dsl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="wRd-3N-iSW"/>
+            </constraints>
             <connections>
+                <outlet property="imgCell" destination="0jF-SB-AA1" id="0Ud-eX-Q50"/>
                 <outlet property="lbDay" destination="S6W-Jj-p1R" id="OPG-Hj-3ac"/>
                 <outlet property="viewCell" destination="2i6-Hv-dsl" id="w2Q-hQ-Rsu"/>
             </connections>
-            <point key="canvasLocation" x="-368" y="11"/>
+            <point key="canvasLocation" x="-2152" y="-67"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="icons8-filled-circle-48" width="48" height="48"/>
+    </resources>
 </document>
